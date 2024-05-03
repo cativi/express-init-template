@@ -8,10 +8,11 @@ app.use(express.json());
 app.use(cors());
 
 // Configuración de rutas
-app.use('/api', require('./routes/api')); // Mount the router for /api routes
+app.use('/api', require('./routes/api'));
 
 app.get('/', (req, res) => {
     res.send('Ruta en el Backend');
 });
 
 module.exports = app;
+

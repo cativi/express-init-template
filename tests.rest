@@ -6,3 +6,9 @@
 #################### ITEMS #####################
 
 GET {{host}}/api/items
+
+
+
+#################### CATEGORIES #####################
+
+GET {{host}}/api/categories/1

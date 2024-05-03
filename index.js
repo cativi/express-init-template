@@ -2,8 +2,6 @@
 const http = require('http');
 const app = require('./src/app');
 
-const Item = require('./src/models/items.model');
-
 // Config .env
 require('dotenv').config();
 
