@@ -11,4 +11,9 @@ GET {{host}}/api/items
 
 #################### CATEGORIES #####################
 
-GET {{host}}/api/categories/1
+
+GET {{host}}/api/categories
+
+###
+GET {{host}}/api/categories/Education
+
