@@ -1,0 +1,21 @@
+[debug] [2024-05-20T16:36:39.053Z] ----------------------------------------------------------------------
+[debug] [2024-05-20T16:36:39.054Z] Command:       /opt/homebrew/Cellar/node/22.0.0/bin/node /opt/homebrew/bin/firebase init
+[debug] [2024-05-20T16:36:39.054Z] CLI Version:   13.9.0
+[debug] [2024-05-20T16:36:39.055Z] Platform:      darwin
+[debug] [2024-05-20T16:36:39.055Z] Node Version:  v22.0.0
+[debug] [2024-05-20T16:36:39.055Z] Time:          Mon May 20 2024 18:36:39 GMT+0200 (hora de verano de Europa central)
+[debug] [2024-05-20T16:36:39.055Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-20T16:36:39.058Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-20T16:36:39.058Z] > authorizing via signed-in user (hola@cafeconcarlos.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/carlostv2021/Desktop/01 - ID Bootcamps/00 - Bootcamp/12-ProyectoIndividual/backend_portfolio
+
