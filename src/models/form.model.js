@@ -9,7 +9,6 @@ const formSchema = new Schema({
     recaptcha: String
 });
 
-// TODO: Define the method on the schema for the Form Submission
 formSchema.methods.submitForm = async function () {
     await this.save();
 };
