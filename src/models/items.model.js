@@ -6,6 +6,7 @@ const itemSchema = new Schema({
     categoryId: Number,
     categoryTitle: String,
     organization: String,
+    orgWebsite: String,
     title: String,
     stDate: String,
     endDate: String,
