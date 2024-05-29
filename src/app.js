@@ -11,7 +11,7 @@ app.use(cors());
 app.use('/api', require('./routes/api'));
 
 app.get('/', (req, res) => {
-    res.send('Ruta en el Backend');
+    res.send('Ruta en el Backend de OCI');
 });
 
 module.exports = app;
