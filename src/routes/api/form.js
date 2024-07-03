@@ -1,5 +1,5 @@
 // form.js
-
+require('dotenv').config();
 const Form = require("./../../models/form.model");
 const router = require("express").Router();
 const nodemailer = require("nodemailer");
@@ -8,8 +8,8 @@ const nodemailer = require("nodemailer");
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: "carlostiscarvilches@gmail.com",
-        pass: "dwdr naat cfie xwjt",
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS,
     },
 });
 
@@ -21,8 +21,8 @@ router.post("/", async (req, res) => {
 
         // Send the email
         await transporter.sendMail({
-            from: "carlostiscarvilches@gmail.com",
-            to: "hola@cafeconcarlos.com",
+            from: process.env.GMAIL_USER,
+            to: process.env.RECIPIENT_EMAIL,
             subject: "Website Contact Form Submission",
             text: `Name: ${req.body.name}\nEmail: ${req.body.email}\nMessage: ${req.body.message}`,
         });

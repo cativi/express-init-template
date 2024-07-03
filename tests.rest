@@ -17,3 +17,59 @@ GET {{host}}/api/categories
 ###
 GET {{host}}/api/categories/Education
 
+#################### FORM #####################
+
+
+###
+# Test successful form submission
+POST http://localhost:3000/api/form
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "message": "This is a test message."
+}
+###
+# Test form submission with missing fields
+POST http://localhost:3000/form
+Content-Type: application/json
+
+{
+    "name": "Jane Doe",
+    "email": "",
+    "message": ""
+}
+###
+# Test form submission with invalid email
+POST http://localhost:3000/form
+Content-Type: application/json
+
+{
+    "name": "Alice",
+    "email": "alice.com",
+    "message": "Invalid email format."
+}
+###
+# Test form submission with extra fields
+POST http://localhost:3000/form
+Content-Type: application/json
+
+{
+    "name": "Bob",
+    "email": "bob@example.com",
+    "message": "Extra fields included.",
+    "extraField": "Should be ignored"
+}
+###
+# Test form submission with large message
+POST http://localhost:3000/form
+Content-Type: application/json
+
+{
+    "name": "Charlie",
+    "email": "charlie@example.com",
+    "message": "This is a test message that is intentionally made very long to test the handling of large input messages. " +
+               "It should test whether the server can handle large payloads without error and still process them correctly."
+}
+###
