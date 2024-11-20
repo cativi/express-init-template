@@ -6,7 +6,12 @@ const app = express();
 
 // Update this CORS configuration
 app.use(cors({
-    origin: ['https://cafeconcarlos.com', 'http://cafeconcarlos.com'],
+    origin: [
+        'https://cafeconcarlos.com',
+        'http://cafeconcarlos.com',
+        'https://portfolio.cafeconcarlos.com',
+        'http://portfolio.cafeconcarlos.com'
+    ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
