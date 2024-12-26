@@ -13,13 +13,20 @@ app.use((req, res, next) => {
 });
 
 app.use(cors({
-    origin: [
-        'http://localhost:4200',
-        'https://cafeconcarlos.com',
-        'http://cafeconcarlos.com',
-        'https://portfolio.cafeconcarlos.com',
-        'http://portfolio.cafeconcarlos.com'
-    ],
+    origin: (origin, callback) => {
+        if (!origin || [
+            'http://localhost:4200',
+            'https://cafeconcarlos.com',
+            'http://cafeconcarlos.com',
+            'https://portfolio.cafeconcarlos.com',
+            'http://portfolio.cafeconcarlos.com'
+        ].includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
 }));
