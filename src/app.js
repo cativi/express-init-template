@@ -3,6 +3,15 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
+app.use((req, res, next) => {
+    const originalSetHeader = res.setHeader;
+    res.setHeader = function (name, value) {
+        console.log(`[DEBUG] Setting Header: ${name}: ${value}`);
+        originalSetHeader.call(this, name, value);
+    };
+    next();
+});
+
 app.use(cors({
     origin: [
         'http://localhost:4200',
