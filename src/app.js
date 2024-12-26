@@ -14,15 +14,18 @@ app.use((req, res, next) => {
 
 app.use(cors({
     origin: (origin, callback) => {
-        if (!origin || [
+        console.log(`[DEBUG] Origin: ${origin}`);
+        const allowedOrigins = [
             'http://localhost:4200',
             'https://cafeconcarlos.com',
             'http://cafeconcarlos.com',
             'https://portfolio.cafeconcarlos.com',
             'http://portfolio.cafeconcarlos.com'
-        ].includes(origin)) {
+        ];
+        if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
+            console.log(`[DEBUG] Origin not allowed: ${origin}`);
             callback(new Error('Not allowed by CORS'));
         }
     },
@@ -30,6 +33,7 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
 }));
+
 
 app.use(express.json());
 
