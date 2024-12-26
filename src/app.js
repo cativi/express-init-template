@@ -1,28 +1,31 @@
-// app.js
-
+// File: src/app.js
 const express = require('express');
 const cors = require('cors');
 const app = express();
 
-// Update this CORS configuration
 app.use(cors({
     origin: [
+        'http://localhost:4200',
         'https://cafeconcarlos.com',
         'http://cafeconcarlos.com',
         'https://portfolio.cafeconcarlos.com',
         'http://portfolio.cafeconcarlos.com'
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true
+    allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
 }));
 
 app.use(express.json());
 
-// Configuración de rutas
+// Routes
 app.use('/api', require('./routes/api'));
-app.get('/', (req, res) => {
-    res.send('Ruta en el Backend de OCI');
+
+// Global error handler
+app.use((err, req, res, next) => {
+    console.error('Global error:', err);
+    if (!res.headersSent) {
+        res.status(500).json({ error: err.message || 'Server error' });
+    }
 });
 
 module.exports = app;

@@ -1,4 +1,4 @@
-// Creación y configuración del SERVER
+// index.js: Creación y configuración del SERVER
 const http = require('http');
 const app = require('./src/app');
 
